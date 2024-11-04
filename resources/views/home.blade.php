@@ -23,6 +23,23 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+  
+    <!-- Client Logos Section -->
+    <section class="client-logos py-5 bg-light text-center">
+      <h2>Our Happy Customers</h2>
+      <div class="wrapper">
+          <div class="item item1"></div>
+          <div class="item item2"></div>
+          <div class="item item3"></div>
+          <div class="item item4"></div>
+          <div class="item item5"></div>
+          <div class="item item6"></div>
+          <div class="item item7"></div>
+          <div class="item item8"></div>
+        </div>
+  </section>
+
   
   <!-- Services Overview Section -->
 <section class="services-overview py-5 text-center bg-light text-dark">
@@ -34,7 +51,7 @@
               <div class="card-body">
                   <h3 class="card-title text-purple">Design Services</h3>
                   <p class="card-text">UI/UX Design, Logo Design, Graphic Design, and more.</p>
-                  <a href="/services/design" class="btn">Learn More</a>
+                  <a href="{{route('contact')}}" class="btn">Learn More</a>
               </div>
           </div>
       </div>
@@ -44,7 +61,7 @@
               <div class="card-body">
                   <h3 class="card-title text-purple">Development Services</h3>
                   <p class="card-text">Custom Websites, E-Commerce Solutions, and more.</p>
-                  <a href="/services/development" class="btn">Learn More</a>
+                  <a href="{{route('contact')}}" class="btn">Learn More</a>
               </div>
           </div>
       </div>
@@ -54,7 +71,7 @@
               <div class="card-body">
                   <h3 class="card-title text-purple">Marketing Services</h3>
                   <p class="card-text">SEO, Content Marketing, Social Media, and more.</p>
-                  <a href="/services/marketing" class="btn">Learn More</a>
+                  <a href="{{route('contact')}}" class="btn">Learn More</a>
               </div>
           </div>
       </div>
@@ -252,5 +269,4 @@
       </div>
     </div>
   </section>
-  <hr>
 @endsection

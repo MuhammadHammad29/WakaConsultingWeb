@@ -238,6 +238,9 @@ body {
 }
 
 
+body {
+  overflow-x: hidden; /* to Hide horizontal scrollbar */
+}
 
 /* Navbar Background to Purple */
 .navbar {
@@ -259,7 +262,14 @@ body {
     color: white !important;
     padding: 10px;
 }
+.btn:hover{
+  background-color: white !important;
+  color:rgb(75, 10, 75) !important ;
+}
 
+.searchinput:hover{
+  width: 300px;
+}
 /* Footer Background to lightgrey */
 footer {
     background-color: lightgray!important; /* Lightgrey color */
@@ -280,16 +290,31 @@ footer a:hover {
     color: white !important;
 }
 
-h2,h1{
+
+h2{
   font-size: xx-large !important;
   color: purple !important;
 }
+h1{
+  color: purple;
+}
 
+/*FOR FAQ*/
 .card-body,
 .accordion-button:not(.collapsed) {
   background: linear-gradient(to right, #5a2d82, #2d5a82);
   color: #fff;
 }
+#FAQheadingOne,
+#FAQheadingTwo,
+#FAQheadingThree{
+  font-size: 20px;
+  
+}
+.accordion-body{
+  font-size: 15px;
+}
+
 hr{
 width: 80px; 
 height: 3px; 
@@ -302,3 +327,111 @@ background-color: #5a2d82;
 .hero-section{
 background: linear-gradient(to right, #5a2d82, #2d5a82);
 }
+
+#name,#email{
+  padding: 10px;
+
+}
+
+
+/*FOR CUSTOMERS SCROLLER*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  margin-top: 5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.item {
+  width: 200px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+    background-image: url('/images/SharLogo.jpeg'); /*Replace with the correct path */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+    background-image: url('/images/KiaLogo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+    background-image: url('/images/crodalogo.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+    background-image: url('/images/HarmanLogo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+    background-image: url('/images/JennairLogo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+    background-image: url('/images/SchemeLogo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+    background-image: url('/images/TBILOGO.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+    background-image: url('/images/GenwestLogo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  

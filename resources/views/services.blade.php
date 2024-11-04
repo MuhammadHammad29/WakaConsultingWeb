@@ -5,7 +5,7 @@
 <div class="container-fluid px-5 py-5">
     <!-- Services Overview Section -->
     <section class="services-overview py-5 text-center bg-light text-dark">
-        <h2 class="mb-4 text-purple">Our Services</h2>
+        <h1 class="display-4 text-uppercase">Our Services</h1>
         <div class="row mt-4">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card shadow-sm border-0 h-100">
@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Design Services</h3>
                         <p class="card-text">UI/UX Design, Logo Design, Graphic Design, and more.</p>
-                        <a href="/services/design" class="btn btn-purple">Learn More</a>
+                        <a href="{{route('contact')}}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Development Services</h3>
                         <p class="card-text">Custom Websites, E-Commerce Solutions, and more.</p>
-                        <a href="/services/development" class="btn btn-purple">Learn More</a>
+                        <a href="{{route('contact')}}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Marketing Services</h3>
                         <p class="card-text">SEO, Content Marketing, Social Media, and more.</p>
-                        <a href="/services/marketing" class="btn btn-purple">Learn More</a>
+                        <a href="{{route('contact')}}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>

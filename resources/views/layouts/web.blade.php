@@ -44,6 +44,12 @@
                         <a class="nav-link" href="{{route('contact')}}">Contact</a>
                     </li>
                 </ul>
+             <!-- Add Search Form in Navbar -->
+                <form class="d-flex me-2 search" action="{{ route('services.search') }}" method="GET">
+                 <input class="form-control me-2 searchinput" type="search" name="query" placeholder="Search Services" aria-label="Search">
+                 <button class="btn" type="submit">Search</button>
+                </form>
+
                 <div class="d-flex">
                     <a href="{{route('login')}}" class="btn btn-login me-2">Login</a>
                     <a href="{{route('register')}}" class=" btn">Sign Up</a>

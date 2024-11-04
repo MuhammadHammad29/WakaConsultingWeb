@@ -16,20 +16,35 @@
         <div class="row">
             <!-- Contact Form -->
             <div class="col-md-6 mb-4">
-                <form>
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <form action="{{ route('contact.store') }}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Enter Your Name" value="{{ old('name') }}">
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter Your Email" value="{{ old('email') }}">
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5" placeholder="Enter Your Message"></textarea>
+                        <textarea class="form-control @error('message') is-invalid @enderror" id="message" name="message" rows="5" placeholder="Enter Your Message">{{ old('message') }}</textarea>
+                        @error('message')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <button type="submit" class="btn ">Send Message</button>
+                    <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
             
@@ -48,14 +63,14 @@
             </div>
         </div>
     </section>
-
+    
     <!-- FAQ Section with Collapsible Items -->
     <section class="py-5">
         <h2 class="text-center mb-4" >Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAccordion"  >
+        <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne" >
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background: linear-gradient(to right, #5a2d82, #2d5a82);color: #fff;">
+                <h2 class="accordion-header" >
+                    <button class="accordion-button collapsed" id="FAQheadingOne" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         What services do you offer?
                     </button>
                 </h2>
@@ -66,8 +81,8 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" id="FAQheadingTwo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         How can I get a quote?
                     </button>
                 </h2>
@@ -78,8 +93,8 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" id="FAQheadingThree" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Do you offer support after project completion?
                     </button>
                 </h2>
