@@ -21,7 +21,7 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="{{ route('contact.store') }}" method="POST">
+                <form action="/" >
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>

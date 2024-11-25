@@ -17,9 +17,6 @@ return new class extends Migration
         $table->string('title');
         $table->string('tagline')->nullable();
         $table->text('description')->nullable();
-        $table->json('benefits')->nullable(); // Store benefits as JSON array
-        $table->json('images')->nullable();    // Store image paths as JSON array
-        $table->json('testimonials')->nullable(); // Store testimonials as JSON array
         $table->timestamps();
         });
     }

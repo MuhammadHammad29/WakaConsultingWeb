@@ -4,24 +4,30 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\ServiceController;
 
 Route::get('/', [WebController::class, 'home'])->name('home');
-Route::get('/services', [WebController::class, 'services'])->name('services');
+Route::get('/service', [WebController::class, 'service'])->name('service');
 Route::get('/contact', [WebController::class, 'contact'])->name('contact');
 
-//services routes
-Route::get('/services/search', [WebController::class, 'search'])->name('services.search');
-Route::get('/services/{id}', [WebController::class, 'show'])->name('services.show');
-Route::post('/services', [WebController::class, 'storeservice'])->name('services.store');
-
-//contact routes
-Route::post('/contact', [WebController::class, 'storecontact'])->name('contact.store');
-
-
+Route::get('/design', [WebController::class, 'designService'])->name('design');
+Route::get('/development',[WebController::class, 'developmentService'])->name('development');
+Route::get('/marketing',[WebController::class, 'marketingService'])->name('marketing');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::name('services.')->prefix('services')->group(function() {
+    Route::get('/', [ServiceController::class, 'index'])->name('index');
+    Route::get('create', [ServiceController::class, 'create'])->name('create');
+    Route::post('store', [ServiceController::class, 'store'])->name('store');
+    Route::get('edit/{id}', [ServiceController::class, 'edit'])->name('edit');
+    Route::post('update', [ServiceController::class, 'update'])->name('update');
+    Route::get('destroy/{id}', [ServiceController::class, 'destroy'])->name('destroy');
+});
+
+Route::get('/services/{id}', [WebController::class, 'show'])->name('services.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

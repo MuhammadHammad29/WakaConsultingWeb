@@ -38,14 +38,14 @@
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('services') }}">Services</a>
+                        <a class="nav-link" href="{{ route('service') }}">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('contact')}}">Contact</a>
                     </li>
                 </ul>
              <!-- Add Search Form in Navbar -->
-                <form class="d-flex me-2 search" action="{{ route('services.search') }}" method="GET">
+                <form class="d-flex me-2 search" action="/" method="GET">
                  <input class="form-control me-2 searchinput" type="search" name="query" placeholder="Search Services" aria-label="Search">
                  <button class="btn" type="submit">Search</button>
                 </form>
@@ -60,7 +60,7 @@
 
     <!-- Main Content -->
     <main >
-        @yield('content') <!-- This is where child views will be inserted -->
+        @yield('content') 
     </main>
 
     <!-- Footer -->

@@ -1,14 +1,20 @@
-@extends('layouts.web') 
+@extends('layouts.web')
 
 @section('content')
 <section>
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-10 col-xl-8 text-center">
-      <h1 class="mb-4">{{ $data->title }}</h1>
-      <p><strong>Tagline:</strong> {{ $data->tagline }}</p>
-      <p class="mb-4 pb-2 mb-md-5 pb-md-0">
-        {{ $data->description }}
-</section>  
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h1 class="mb-4">Marketting Servcies</h1>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+          We specialize in providing comprehensive digital marketing services to help businesses grow and succeed online.
+</section>    
+    <!-- Hero Section with Full Width Background -->
+    <section class="hero-section text-center text-white py-5">
+        <h1 class="display-4 h1cta">Our Expertise, Your Success</h1>
+        <p class="lead">Comprehensive solutions to transform your business.</p>
+        <a href="{{ route('contact') }}" class="btn btn-lg mt-3">Get in Touch</a>
+    </section>
+    
 <!--Recent Projects Section-->
 
    <section id="tranding">
@@ -130,14 +136,6 @@
       </div>
     </div>
   </section> 
-  
-<!-- Hero Section with Full Width Background -->
-<section class="hero-section text-center text-white py-5">
-    <h1 class="display-4 h1cta">Our Expertise, Your Success</h1>
-    <p class="lead">Comprehensive solutions to transform your business.</p>
-    <a href="{{ route('contact') }}" class="btn btn-lg mt-3">Get in Touch</a>
-</section>
-
   <!--Testimonial Section-->
 
   <section>

@@ -12,59 +12,38 @@ class WebController extends Controller
         return view('home');
     }
 
-    public function services()
+    public function service()
     {
-        return view('services');
+        return view('service');
     }
 
     public function contact()
     {
         return view('contact');
     }
-    public function search(Request $request)
+
+    public function designService()
     {
-    $query = $request->input('query');
-    $services = Service::where('name', 'like', '%' . $query . '%')->get();
-
-    return view('services.index', compact('services'))->with('query', $query);
-    }
-    
-    public function storeContact(Request $request)
-    {
-    // Validate form input
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email',
-        'message' => 'required|string',
-    ]);
-
-    //contact form submission logic 
-
-    // Redirect or provide feedback
-    return redirect()->back()->with('success', 'Message sent successfully!');
+    return view('design');
     }
 
-    public function storeService(Request $request)
-{
-    $validatedData = $request->validate([
-        'title' => 'required|string|max:255',
-        'tagline' => 'nullable|string|max:255',
-        'description' => 'required|string',
-        'benefits' => 'nullable|json',
-        'images' => 'nullable|json',
-        'testimonials' => 'nullable|json',
-    ]);
+    public function developmentService()
+    {
+    return view('development');
+    }
 
-    Service::create($validatedData);
-    return redirect()->route('services')->with('success', 'Service added successfully.');
-}
-
+    public function marketingService()
+    {
+    return view('marketing');
+    }
 
     public function show($id)
-{
-    $service = Service::findOrFail($id);
-    return view('services.show', compact('service'));
-}
+    {
+        $data = Service::findOrFail($id); // Fetch service by ID
+        return view('services.show', compact('data')); // Pass service to the view
+        
+    }
+
 
 }
 

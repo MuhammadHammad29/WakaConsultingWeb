@@ -10,14 +10,5 @@ class Service extends Model
         'title',
         'tagline',
         'description',
-        'benefits',
-        'images',
-        'testimonials',
-    ];
-
-    protected $casts = [
-        'benefits' => 'array',       // Cast JSON to array
-        'images' => 'array',
-        'testimonials' => 'array',
     ];
 }

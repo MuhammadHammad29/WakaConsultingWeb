@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Design Services</h3>
                         <p class="card-text">UI/UX Design, Logo Design, Graphic Design, and more.</p>
-                        <a href="{{route('contact')}}" class="btn btn-purple">Learn More</a>
+                        <a href="{{route('design')}}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Development Services</h3>
                         <p class="card-text">Custom Websites, E-Commerce Solutions, and more.</p>
-                        <a href="{{route('contact')}}" class="btn btn-purple">Learn More</a>
+                        <a href="{{route('development')}}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Marketing Services</h3>
                         <p class="card-text">SEO, Content Marketing, Social Media, and more.</p>
-                        <a href="{{route('contact')}}" class="btn btn-purple">Learn More</a>
+                        <a href="{{route('marketing')}}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>
