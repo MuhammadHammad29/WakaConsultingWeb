@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Project extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 
-        'description',
+        'title', 
+        'picture',
+        'figma_link',
     ];
 
-    // A category can have many services
     public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->belongsToMany(Service::class, 'project_service');
     }
 }
-

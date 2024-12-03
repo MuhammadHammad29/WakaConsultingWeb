@@ -291,12 +291,19 @@ footer a:hover {
 }
 
 
-h2{
+h2,h1{
   font-size: xx-large !important;
   color: purple !important;
 }
-h1{
+h3{
   color: purple;
+}
+
+.paracenter{
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #5a2d82, #2d5a82);
+  color: white;
 }
 
 /*FOR FAQ*/

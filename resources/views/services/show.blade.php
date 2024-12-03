@@ -5,132 +5,53 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-10 col-xl-8 text-center">
       <h1 class="mb-4">{{ $data->title }}</h1>
-      <p><strong>Tagline:</strong> {{ $data->tagline }}</p>
+      <h3 ><strong>Tagline:</strong> {{ $data->tagline }}</h3>
       <p class="mb-4 pb-2 mb-md-5 pb-md-0">
-        {{ $data->description }}
-</section>  
+        {{ $data->description }}</p>
+</section>
+
 <!--Recent Projects Section-->
 
-   <section id="tranding">
-    <div class="container">
-      <h2 class="text-center">Our Recent Work</h2>
-    </div>
-    <div class="container">
-      <div class="swiper tranding-slider">
-        <div class="swiper-wrapper">
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{ asset('images/Ai.png')}}" alt="Ai">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  AI Project
-                </h2>
-              </div>
+<section id="tranding">
+  <div class="container">
+    <h2 class="text-center">Our Recent Work</h2>
+  </div>
+  <div class="container">
+    <div class="swiper tranding-slider">
+      <div class="swiper-wrapper">
+        @foreach ($data->projects as $project)
+        <!-- Slide-start -->
+        <div class="swiper-slide tranding-slide">
+          <a href="{{ $project->figma_link }}" target="_blank" rel="noopener noreferrer" >
+          <div class="tranding-slide-img">
+            <img src="{{ asset('storage/uploads/' . $project->picture) }}" alt="{{ $project->title }}" width="150">
+          </div>
+          <div class="tranding-slide-content">
+            <div class="tranding-slide-content-bottom">
+              <h2 class="food-name">
+                {{ $project->title }}
+              </h2>
             </div>
           </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{ asset('images/Eduplay.jpg')}}" alt="EduPlay">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  EduPlay
-                </h2>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{ asset('images/PetVet.png')}}" alt="PetVet">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  PetVet
-                </h2>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{ asset('images/TravelApp.png')}}" alt="TravelApp">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Travello
-                </h2>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{ asset('images/YogaCaseStudy.jpg')}}" alt="YogaApp">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  YogaApp
-                </h2>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{asset('images/Saas.png')}}" alt="Saas Dashboard">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  SAAS Dashboard
-                </h2>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="{{asset('images/DataValley.png')}}" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  DataValley
-                </h2>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
+          </a>
         </div>
+        <!-- Slide-end -->
+        @endforeach
+      </div>
 
-        <div class="tranding-slider-control">
-          <div class="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div class="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div class="swiper-pagination"></div>
+      <div class="tranding-slider-control">
+        <div class="swiper-button-prev slider-arrow">
+          <ion-icon name="arrow-back-outline"></ion-icon>
         </div>
+        <div class="swiper-button-next slider-arrow">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
-  </section> 
-  
+  </div>
+</section>
+
 <!-- Hero Section with Full Width Background -->
 <section class="hero-section text-center text-white py-5">
     <h1 class="display-4 h1cta">Our Expertise, Your Success</h1>

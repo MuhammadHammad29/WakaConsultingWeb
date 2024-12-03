@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-purple">Design Services</h3>
                         <p class="card-text">UI/UX Design, Logo Design, Graphic Design, and more.</p>
-                        <a href="{{route('design')}}" class="btn btn-purple">Learn More</a>
+                        <a href="{{ route('services.show', ['id' => 5]) }}" class="btn btn-purple">Learn More</a>
                     </div>
                 </div>
             </div>

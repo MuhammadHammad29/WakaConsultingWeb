@@ -52,7 +52,9 @@
 
                 <div class="d-flex">
                     <a href="{{route('login')}}" class="btn btn-login me-2">Login</a>
-                    <a href="{{route('register')}}" class=" btn">Sign Up</a>
+                 <!--    
+                    <a href="" class=" btn">Sign Up</a>
+                -->
                 </div>
             </div>
         </div>
@@ -74,9 +76,9 @@
     
             <!-- Navigation Links -->
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="footer-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
-                <li class="footer-item"><a href="/services" class="nav-link px-2 text-body-secondary">Services</a></li>
-                <li class="footer-item"><a href="/contact" class="nav-link px-2 text-body-secondary">Contact</a></li>
+                <li class="footer-item"><a href="{{ route('home') }}" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="footer-item"><a href="{{ route('service') }}" class="nav-link px-2 text-body-secondary">Services</a></li>
+                <li class="footer-item"><a href="{{route('contact')}}" class="nav-link px-2 text-body-secondary">Contact</a></li>
             </ul>
     
             <!-- Social Media Links -->
