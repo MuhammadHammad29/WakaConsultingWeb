@@ -46,5 +46,7 @@ Route::middleware('auth')->group(function () {
     });
 
 });
+Route::get('/search-services', [WebController::class, 'searchServices'])->name('service.search');
+
 
 require __DIR__.'/auth.php';

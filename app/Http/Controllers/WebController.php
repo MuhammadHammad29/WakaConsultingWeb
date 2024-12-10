@@ -44,6 +44,20 @@ class WebController extends Controller
         
     }
 
+    public function searchServices(Request $request)
+{
+    $query = $request->input('query');
+
+    // Search for services based on title or another field
+    $services = Service::where('title', 'LIKE', '%' . $query . '%')
+        ->orWhere('description', 'LIKE', '%' . $query . '%')
+        ->limit(10)
+        ->get();
+
+    return response()->json($services);
+}
+
+
 
 }
 

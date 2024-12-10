@@ -45,10 +45,12 @@
                     </li>
                 </ul>
              <!-- Add Search Form in Navbar -->
-                <form class="d-flex me-2 search" action="/" method="GET">
-                 <input class="form-control me-2 searchinput" type="search" name="query" placeholder="Search Services" aria-label="Search">
-                 <button class="btn" type="submit">Search</button>
-                </form>
+                <div class="search-container" style="position: relative;">
+                    <input type="text" id="search-bar" class="form-control" placeholder="Search for services..." autocomplete="off">
+                    <ul id="search-results" class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; z-index: 1000; width: 100%;">
+                        <!-- Dynamic results will appear here -->
+                    </ul>
+                </div>
 
                 <div class="d-flex">
                     <a href="{{route('login')}}" class="btn btn-login me-2">Login</a>
@@ -101,6 +103,48 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/swiper.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#search-bar').on('keyup', function () {
+            let query = $(this).val();
 
+            if (query.length > 0) {
+                $.ajax({
+                    url: "{{ route('service.search') }}",
+                    type: "GET",
+                    data: { query: query },
+                    success: function (data) {
+                        let results = '';
+                        if (data.length > 0) {
+                            data.forEach(function (service) {
+                                results += `
+                                    <li class="dropdown-item">
+                                        <a href="/services/${service.id}">${service.title}</a>
+                                    </li>`;
+                            });
+                        } else {
+                            results = '<li class="dropdown-item">No results found</li>';
+                        }
+
+                        $('#search-results').html(results).show();
+                    },
+                    error: function () {
+                        $('#search-results').html('<li class="dropdown-item">Error fetching results</li>').show();
+                    }
+                });
+            } else {
+                $('#search-results').hide();
+            }
+        });
+
+        // Hide results dropdown when clicking outside
+        $(document).click(function (e) {
+            if (!$(e.target).closest('.search-container').length) {
+                $('#search-results').hide();
+            }
+        });
+    });
+</script>
 </body>
 </html>
